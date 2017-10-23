@@ -1,0 +1,23 @@
+### student.dat
+### Author: Ruaridh Williamson
+
+## Part A
+
+param passmark := 0.4;
+param maxmark  := 0.8;
+
+param minmark :=
+               1 0.2
+               2 0.6
+               3 0.3
+               ;
+
+param raisemark :=
+               1 0.05
+               2 0.10
+               3 0.08
+               ;
+
+## Part B
+
+param restrictgrade := 0.15;
