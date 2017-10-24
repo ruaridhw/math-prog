@@ -43,10 +43,10 @@ OneWrongNumber: sum {(i, j) in ENTRIES} incorrect[i,j] = 1;
 
 ## Part C
 
-# For Part C, to test whether we have a unique solution as the point (x,y)
-# being incorrect, we can add one additional constraint which forces this point
+# For Part C, to test whether we have a unique solution as the starting grid square
+# (2,2) being incorrect, we can add one additional constraint which forces this point
 # to be a correct starting entry thereby causing the solver to search for another
 # feasible solution with a different incorrect starting entry.
-DuplicateSolution: {(i, j) in (1,1)}: incorrect[i,j] = 0;
+DuplicateSolution: {(i, j) in {(2,2)}}: incorrect[i,j] = 0;
 
 option solver cplex;
