@@ -5,11 +5,10 @@ param cost{ROUTES};
 param demand{LOCATIONS} default 0;
 param supply{LOCATIONS} default 0;
 param max_throughput{LOCATIONS} default Infinity;
-param preference_penalty{ROUTES} default 0;
 var x{ROUTES} >= 0;
 
 minimize total_cost:
-        sum{(i,j) in ROUTES} ((cost[i,j] + preference_penalty[i,j]) * x[i,j])
+        sum{(i,j) in ROUTES} (cost[i,j] * x[i,j])
       ;
 
 subject to
