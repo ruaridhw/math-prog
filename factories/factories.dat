@@ -1,0 +1,56 @@
+set LOCATIONS := Liverpool Brighton Newcastle Birmingham London Exeter C1 C2 C3 C4 C5 C6;
+
+param: ROUTES:  cost :=
+  [Liverpool,*]
+      Newcastle 1
+      Birmingham 1
+      London 2
+      Exeter 0.4
+      C1 1
+      C3 3
+      C4 4
+      C6 2
+  [Brighton,*]
+      Birmingham 0.6
+      London 1
+      Exeter 0.4
+      C1 4
+  [Newcastle,*]
+      C2 3
+      C3 1
+      C4 3
+      C6 2
+  [Birmingham,*]
+      C1 2
+      C2 1
+      C3 1
+      C4 2
+      C5 1
+  [London,*]
+      C2 3
+      C3 3
+      C5 1
+      C6 3
+  [Exeter,*]
+      C4 3
+      C5 1
+      C6 3
+;
+
+param:       demand  supply :=
+  Liverpool       .     150
+  Brighton        .     200
+  C1             50       .
+  C2             10       .
+  C3             40       .
+  C4             35       .
+  C5             60       .
+  C6             20       .
+;
+
+param:      max_throughput :=
+  Newcastle             70
+  Birmingham            50
+  London               100
+  Exeter                40
+;
